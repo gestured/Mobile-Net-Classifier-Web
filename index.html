@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Getting Started with ml5.js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      transition: all .5s ease;
+    }
+    img {
+      width: 100%;
+    }
+    .spinner-border {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    #main {
+      padding: 2rem 0;
+    }
+  </style>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <span class="navbar-brand mb-0 h1">Image Classification</span>
+      <span class="navbar-text my-lg-0" id="model_status">Loading Model...</span>
+    </nav>
+    <div class="spinner-border" id="spinner" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="container" id="main">
+      <h1>Upload an Image for Classification</h1>
+      <form>
+        <label for="img_input_btn">Select image:</label>
+        <input
+          type="file"
+          id="img_input_btn"
+          name="img_input_btn"
+          accept="image/*"
+        />
+        <input type="button" id="img_submit_btn" value="Predict!" />
+      </form>
+      <div class="container" id="img_wrapper"></div>
+      <div class="container">
+        <p id="prediction"></p>
+        <p id="confidence"></p>
+      </div>
+    </div>
+    
+    <script src="sketch.js"></script>
+  </body>
+</html>
